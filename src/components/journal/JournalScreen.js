@@ -1,5 +1,6 @@
 import React from 'react'
 import { Sidebar } from './Sidebar'
+import { NothingSelected } from './NothingSelected'
 
 export const JournalScreen = () => {
     return (
@@ -8,7 +9,8 @@ export const JournalScreen = () => {
             <Sidebar />
 
             <main>
-                <h1>Main Content</h1>
+                
+             {/*    <NothingSelected /> */}
 
             </main>
 
