@@ -3,29 +3,16 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDUS9ql10cYYS3e3o6G75HFGPZaw66qK4g",
-    authDomain: "journal-react-example.firebaseapp.com",
-    projectId: "journal-react-example",
-    storageBucket: "journal-react-example.appspot.com",
-    messagingSenderId: "898529882843",
-    appId: "1:898529882843:web:abde72df858ff2db3cd2fe"
+    apiKey: process.env.REACT_APP_APIKEY,
+    authDomain: process.env.REACT_APP_AUTHDOMAIN,
+    databaseURL: process.env.REACT_APP_DATABASEURL,
+    projectId: process.env.REACT_APP_PROJECTID,
+    storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+    appId: process.env.REACT_APP_APPID,
 };
 
-const firebaseConfigTesting = {
-    apiKey: "AIzaSyC0hPASIueL9jpN_1FaL6v52qr2-oppgq0",
-    authDomain: "testing-47aa0.firebaseapp.com",
-    projectId: "testing-47aa0",
-    storageBucket: "testing-47aa0.appspot.com",
-    messagingSenderId: "153805280086",
-    appId: "1:153805280086:web:0f63ca47efb3e67b273cf7"
-  };
-
-
-  if(process.env.NODE_ENV === 'test'){
-    firebase.initializeApp(firebaseConfigTesting);
-  } else{
-    firebase.initializeApp(firebaseConfig);
-  }
+  firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore()
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
