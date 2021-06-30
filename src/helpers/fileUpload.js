@@ -17,7 +17,7 @@ export const fileUpload = async (file) => {
             const respJson = await resp.json()
             return respJson.secure_url
         } else {
-            throw await resp.json()
+            return await resp.json()
         }
 
     } catch (error) {
